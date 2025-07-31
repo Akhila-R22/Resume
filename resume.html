@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B Jyothi Swaroop Resume</title>
+  <style>
+    /* Reset some default styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 2rem 1rem;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .resume-container {
+      max-width: 900px;
+      background: #fcfcfc;
+      border-radius: 1.8rem;
+      padding: 2.5rem 3rem 3rem 3rem;
+      box-shadow: 0 8px 25px rgb(0 0 0 / 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Rounded big corner shapes in background for style */
+    .resume-container::before {
+      content: "";
+      position: absolute;
+      top: -130px;
+      left: -130px;
+      width: 250px;
+      height: 250px;
+      background: rgba(0,0,0,0.05);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .resume-container::after {
+      content: "";
+      position: absolute;
+      bottom: -120px;
+      right: -120px;
+      width: 220px;
+      height: 220px;
+      background: rgba(0,0,0,0.04);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 700;
+      color: #222;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2.7rem;
+      margin-bottom: 0.2rem;
+      font-family: 'Arial Black', Arial, sans-serif;
+    }
+
+    h1 span {
+      font-weight: 400;
+      font-style: normal;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      color: #4a4a4a;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .header-contact {
+      font-size: 0.8rem;
+      color: #555;
+      letter-spacing: 0.04em;
+      margin-bottom: 2rem;
+      font-family: monospace, monospace;
+      overflow-wrap: anywhere;
+      user-select: text;
+    }
+
+    .header-contact span {
+      white-space: nowrap;
+      margin-left: 0.6rem;
+      margin-right: 0.6rem;
+      color:#999;
+    }
+
+    /* Grid container with 2 columns for main content */
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 3rem 3.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Left side - Skills, Education, Languages Known, Links */
+    .left-column {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.35;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.2rem;
+      border-bottom: 2px solid #666;
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #555;
+    }
+
+    .section h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: #222;
+    }
+
+    /* Skill categories and lists */
+    .skills-category {
+      margin-bottom: 0.75rem;
+    }
+
+    .skills-category strong {
+      font-weight: 700;
+      color: #222;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .skills-subcategory {
+      margin-left: 1rem;
+      margin-bottom: 0.4rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .skills-list {
+      margin-left: 1.9rem;
+      color: #555;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.4rem;
+    }
+
+    li {
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+
+    /* Right side - Experience, Projects, Achievements, Certifications */
+    .right-column {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.35;
+    }
+
+    .experience-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .experience-header {
+      font-weight: 700;
+      color: #222;
+      font-size: 1rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .experience-role {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: #555;
+      margin-bottom: 0.4rem;
+    }
+
+    .experience-tech {
+      margin-left: 1.3rem;
+      font-weight: 600;
+      color: #3b3b3b;
+      font-style: italic;
+      margin-bottom: 0.3rem;
+      font-size: 0.89rem;
+    }
+
+    .experience-points {
+      margin-left: 2.2rem;
+      list-style-type: disc;
+      color: #555;
+      font-size: 0.88rem;
+    }
+
+    .project-name {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      color: #222;
+    }
+
+    .project-tech {
+      font-style: italic;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-problem {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #555;
+    }
+
+    .project-points {
+      margin-left: 2rem;
+      list-style-type: disc;
+      color: #555;
+      font-size: 0.88rem;
+    }
+
+    .achievements-list, .certifications-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 0.2rem;
+      color: #444;
+      font-size: 0.9rem;
+    }
+
+    .achievements-list li, .certifications-list li {
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+
+    .achievements-list strong {
+      font-weight: 700;
+      color: #222;
+    }
+
+    .certification-item {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      color: #222;
+      font-size: 0.9rem;
+    }
+
+    .certification-item span {
+      font-weight: 400;
+      color: #555;
+      flex-shrink: 0;
+      margin-left: 1rem;
+      font-size: 0.88rem;
+      font-family: monospace;
+    }
+
+    /* Links styling */
+    .links-list a {
+      text-decoration: none;
+      color: #2a6ebb;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 0.3rem;
+      word-break: break-word;
+      font-size: 0.88rem;
+      font-family: monospace, monospace;
+    }
+    .links-list a:hover,
+    .links-list a:focus {
+      text-decoration: underline;
+      outline: none;
+      color: #1a4a85;
+    }
+
+    /* Languages known with dots */
+    .languages-known span {
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .languages-known span:not(:last-child)::after {
+      content: "•";
+      margin: 0 0.5rem;
+      color: #999;
+      font-weight: 700;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 720px) {
+      body {
+        padding: 1rem;
+        background: #fff;
+      }
+      .resume-container {
+        max-width: 100%;
+        padding: 2rem 1.5rem 2rem 1.5rem;
+        border-radius: 1rem;
+        box-shadow: none;
+      }
+      .content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .left-column {
+        font-size: 0.92rem;
+      }
+      .right-column {
+        font-size: 0.92rem;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="resume-container" role="main" aria-label="Resume of B Jyothi Swaroop">
+    <header>
+      <h1>Akhila <span>R</span></h1>
+      <p class="subtitle">Full Stack | Content Creation</p>
+      <p class="header-contact" aria-label="Contact and birthdate info">
+        iamakhila03@gmail.com
+        <span>|</span>
+        +91 <span aria-hidden="true">9844461728</span><span class="sr-only"></span>
+        <span>|</span>
+        DOB - 22 Dec, 2003
+      </p>
+    </header>
+
+    <section class="content">
+      <section class="left-column" aria-label="Skills, Education, Languages and Links">
+        <article class="section" aria-labelledby="skills-heading">
+          <h2 id="skills-heading">Skills</h2>
+
+          <div class="skills-category">
+            <strong>Programming</strong>
+            <div class="skills-subcategory">Languages</div>
+            <ul class="skills-list" aria-label="Programming languages">
+              <li>Advance: Python, Java</li>
+              <li>Intermediate: C</li>
+            </ul>
+          </div>
+
+          <div class="skills-category">
+            <div class="skills-subcategory">Tools</div>
+            <ul class="skills-list" aria-label="Tools">
+              <li>GIT · Windows</li>
+            </ul>
+          </div>
+
+          
+
+          <div class="skills-category">
+            <div class="skills-subcategory">Others</div>
+            <ul class="skills-list" aria-label="Other skills">
+              <li>Teamwork and Collaboration</li>
+              <li>Time Management</li>
+              <li>Self-Motivation</li>
+              <li>Exploring new technologies</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="section" aria-labelledby="education-heading">
+          <h2 id="education-heading">Education</h2>
+
+          <h3>B.E, CSE</h3>
+          <p>Sri Sairam College Of Engineering<br/><strong>2021-25| Bengaluru</strong><br/>CGPA: 8.4</p>
+
+          <h3>PU College , PCM</h3>
+          <p>Vidhyadri PU College<br/><strong>2019-21 | Chikkaballpura</strong><br/>Percentage: 82.3%</p>
+
+          <h3>High-School</h3>
+          <p>EverGreen High School <br/><strong>2018-19 | Rayagada</strong><br/>Percentage: 81.7%</p>
+        </article>
+
+        <article class="section" aria-labelledby="languages-heading">
+          <h2 id="languages-heading">Languages Known</h2>
+          <p class="languages-known" aria-label="Languages known">
+            <span>English</span>
+            <span>Kannada</span>
+            <span>Telugu</span>
+          </p>
+        </article>
+
+        <article class="section" aria-labelledby="links-heading">
+          <h2 id="links-heading">Links</h2>
+          <p class="links-list">
+            Github// <a href="https://github.com/Akhila-R22" target="_blank" rel="noopener noreferrer">Akhila_R</a><br />
+            Linkedin// <a href="https://www.linkedin.com/in/akhila-r29091998b/" target="_blank" rel="noopener noreferrer">akhila_vitb</a><br />
+          </p>
+        </article>
+      </section>
+
+      <section class="right-column" aria-label="Experience, Projects, Achievements and Certifications">
+        <article class="section" aria-labelledby="experience-heading">
+          <h2 id="experience-heading">Experience</h2>
+
+          <div class="experience-item">
+            <p class="experience-header">KodNest <span aria-hidden="true">|</span> <em>Intern</em> <span aria-hidden="true">| March 2025 - Present | Bengaluru, India</span></p>
+            <p class="experience-role">FULL-STACK</p>
+            <p class="experience-tech">Java, Spring Boot, MySQL, HTML, CSS, JavaScript</p>
+            <ul class="experience-points">
+              <li>Developed a full-stack web application (Learn-Sphere) using Java, Spring Boot, MySQL, and HTML/CSS/JavaScript.</li>
+              <li>Implemented JWT-based authentication and role-based access control using Spring Security.</li>
+              <li>Designed and connected RESTful APIs to the front-end and managed data flow.</li>
+              <li>Integrated Razorpay API for handling secure payment transactions.</li>
+              <li>Performed CRUD operations on user and course data using MySQL.</li>
+            </ul>
+          </div>
+
+        </article>
+
+        <article class="section" aria-labelledby="projects-heading">
+          <h2 id="projects-heading">Project(s)</h2>
+
+          <div class="project-item">
+            <p class="project-name">Learn-Sphere – E-learning Web Platform</p>
+            <p class="project-tech">Java, Spring Boot, MySQL, HTML, CSS, JavaScript, Spring Security, JWT, Razorpay API</p>
+            <p class="project-problem"><strong>Description:</strong> Developed a full-stack web application for students to learn and enroll in courses online. The platform included user registration, secure login, course browsing, and payment integration.</p>
+            <ul class="project-points">
+              <li>Designed the frontend using HTML, CSS, and JavaScript for responsive UI.</li>
+              <li>Built the backend using Java and Spring Boot with role-based access.</li>
+              <li>Integrated JWT authentication and Spring Security for login/logout.</li>
+              <li>Connected to a MySQL database for storing user and course data.</li>
+              <li>Integrated Razorpay API for secure online payments.</li>
+            </ul>
+          </div>
+
+        <article class="section" aria-labelledby="certifications-heading">
+          <h2 id="certifications-heading">Certifications</h2>
+          <ul class="certifications-list">
+            <li class="certification-item"><strong>Python Essentials</strong><span>By CISCO</span></li>
+
+          </ul>
+        </article>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
+
